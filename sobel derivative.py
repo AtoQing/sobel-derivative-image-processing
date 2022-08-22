@@ -4,7 +4,7 @@ from numpy import sqrt
 
 
 img = cv2.imread("image.png")
-img= cv2.resize(img, (500,500))
+img= cv2.resize(img, (501,501))
 img= cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 
 
