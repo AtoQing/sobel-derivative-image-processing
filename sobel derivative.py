@@ -3,14 +3,14 @@ import numpy as np
 from numpy import sqrt
 
 
-img = cv2.imread("C:\\Users\Admin\Desktop\sobel.png")
-img= cv2.resize(img, (501,501))          #501 uzunluk 3 e bölünür.
+img = cv2.imread("image.png")
+img= cv2.resize(img, (500,500))
 img= cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 
 
-cv2.imshow("Orjinal", img)
+cv2.imshow("Orginal Image", img)
 
-img1 = np.zeros_like(img)       #Yeni değerleri girmek için boş matris oluşturduk.
+img1 = np.zeros_like(img)       #Create matrix for new values
 
 
 for i in range (1,499,1):
@@ -20,8 +20,6 @@ for i in range (1,499,1):
         G = sqrt(Gx**2+Gy**2)
         img1[i,j] = G
 
-
-
+        
 cv2.imshow("Derivative Sobel", img1)
-cv2.imwrite("C:\\Users\Admin\Desktop\plaka\\derivative.jpg",img1)
 cv2.waitKey(0)
